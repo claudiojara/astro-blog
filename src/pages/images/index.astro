@@ -1,0 +1,55 @@
+---
+import { Image, Picture } from "astro:assets";
+import MainLayout from "src/layouts/MainLayout.astro";
+
+import post05 from '@images/post-05.png'
+
+
+---
+<MainLayout title ="Imagenes">
+    <h1 class="text-5xl">Images</h1>
+    <img src="/assets/images/post-05.png" width="250" height="250"/>
+
+    <h1>Quality low</h1>
+    <Image  
+        quality="low"
+        src={post05} 
+        alt="Imagen post" 
+        width="250" 
+        height="250"/>
+    <h1>Quality high</h1>
+    <Image  
+        quality="high"
+        src={post05} 
+        alt="Imagen post" 
+        width="250" 
+        height="250"/>
+
+
+    <h1>Quality formatos</h1>
+    <Image  
+        format="avif"
+        src={post05} 
+        alt="Imagen post" 
+        width="250" 
+        height="250"/>
+
+        <!-- formats={["webp", 'avif', 'jpg']} -->
+        <!-- widths={[240, 540, 720, post05.width]}
+        sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${post05.width}px`}
+         -->
+        <h1>Picture</h1>
+        <Picture  
+            src={post05} 
+            alt="Imagen post" 
+            width="250" 
+            height="250"/>
+
+        
+</MainLayout>
+
+<style>
+    h1{
+        @apply text-white mt-10;
+    }
+</style>
